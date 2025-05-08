@@ -1,0 +1,16 @@
+.card {
+    width: 300px; /* fixed width */
+    height: 400px; /* fixed height */
+    overflow: hidden;
+    margin: auto; /* centers the card horizontally in column */
+}
+
+.card-img-top {
+    height: 180px;
+    object-fit: cover; /* ensures image fills the space without distortion */
+}
+
+.card-body {
+    height: 220px;
+    overflow-y: auto;
+}

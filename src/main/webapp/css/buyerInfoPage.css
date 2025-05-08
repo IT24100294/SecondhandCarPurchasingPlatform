@@ -1,0 +1,71 @@
+/* buyerInfo.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    background: #f4f7fa;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    background: #ffffff;
+    margin: 40px auto;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.container:hover {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+    color: #4b86b4;
+    border-bottom: 2px solid #4b86b4;
+    padding-bottom: 8px;
+}
+
+h4 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-top: 30px;
+    color: #4b86b4;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 10px 0;
+    color: #555;
+}
+
+strong {
+    color: #2a4d69;
+}
+
+@media (max-width: 640px) {
+    .container {
+        margin: 20px 15px;
+        padding: 25px 20px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h4 {
+        font-size: 1.3rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
