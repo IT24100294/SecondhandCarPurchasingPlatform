@@ -6,7 +6,7 @@ import java.io.*;
 import java.util.LinkedList;
 
 public class CarFileHandler {
-    private static final String FILE_PATH = "C:/Users/User/Desktop/Second-Hand Car Sales System/src/main/webapp/WEB-INF/resources/cars.txt";
+    private static final String FILE_PATH = "C:/Users/User/Documents/GitHub/SecondhandCarPurchasingPlatform/src/main/webapp/WEB-INF/resources/cars.txt";
 
     public static LinkedList<Car> readCars() {
         LinkedList<Car> cars = new LinkedList<>();
