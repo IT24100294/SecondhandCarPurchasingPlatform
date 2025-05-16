@@ -1,5 +1,6 @@
 package com.carsales.servlet;
 
+import com.carsales.model.Car;
 import com.carsales.model.Review;
 import com.carsales.util.ReviewLinkedList;
 
@@ -91,8 +92,14 @@ public class ReviewServlet extends HttpServlet {
         List<Review> reviews = reviewList.getReviewsForCar(carId);
         double averageRating = reviewList.getAverageRatingForCar(carId);
 
+        // Get car details from CarServlet
+        CarServlet carServlet = (CarServlet) getServletContext().getAttribute("CarServlet");
+        Car car = null;
+        if (carServlet != null) {
+            car = carServlet.getCarDetails(carId);
+        }
 
-        request.setAttribute("car", "test");
+        request.setAttribute("car", car);
         request.setAttribute("reviews", reviews);
         request.setAttribute("averageRating", averageRating);
         request.setAttribute("carId", carId);
@@ -102,8 +109,14 @@ public class ReviewServlet extends HttpServlet {
     }
 
     private void showAddForm(int carId, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Get car details from CarServlet
+        CarServlet carServlet = (CarServlet) getServletContext().getAttribute("CarServlet");
+        Car car = null;
+        if (carServlet != null) {
+            car = carServlet.getCarDetails(carId);
+        }
 
-        request.setAttribute("car", "Test");
+        request.setAttribute("car", car);
         request.setAttribute("carId", carId);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/review/add.jsp");
@@ -112,8 +125,22 @@ public class ReviewServlet extends HttpServlet {
 
     private void showEditForm(int reviewId, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Review review = reviewList.findReview(reviewId);
+        if (review != null) {
+            // Get car details from CarServlet
+            CarServlet carServlet = (CarServlet) getServletContext().getAttribute("CarServlet");
+            Car car = null;
+            if (carServlet != null) {
+                car = carServlet.getCarDetails(review.getCarId());
+            }
 
+            request.setAttribute("car", car);
+            request.setAttribute("review", review);
 
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/review/edit.jsp");
+            dispatcher.forward(request, response);
+        } else {
+            response.sendError(HttpServletResponse.SC_NOT_FOUND, "Review not found");
+        }
     }
 
     private void addReview(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
