@@ -1,11 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.model.Car" %>
-<%@ page import="java.util.LinkedList" %>
+<%@ page import="com.util.LinkedList" %>
+<%@ page import="com.util.Node" %>
 <html>
 <head>
     <title>Car Listings</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS /style.css">
     <style>
         .search-container {
             backdrop-filter: blur(10px);
@@ -106,21 +107,7 @@
             float: right;
             font-size: 1.3rem;
         }
-        .pagination {
-            margin-top: 2rem;
-            justify-content: center;
-        }
-        .pagination .page-link {
-            color: #0d6efd;
-            border-radius: 0.5rem;
-            margin: 0 0.2rem;
-        }
-        .pagination .page-item.active .page-link {
-            background-color: #0d6efd17;
-            border-color: #0d6efd;
-        }
     </style>
-    <!-- Bootstrap Icons CDN for heart icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 </head>
 <body>
@@ -143,17 +130,14 @@
     <h2 class="mb-4 text-center fw-bold" style="letter-spacing:1px;">🚗 Available Cars</h2>
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <%
-            LinkedList<Car> cars = (LinkedList<Car>) request.getAttribute("cars");
-            int currentPage = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 1;
-            int carsPerPage = 9;
-            int totalCars = cars != null ? cars.size() : 0;
-            int totalPages = (int) Math.ceil((double) totalCars / carsPerPage);
-            int startIndex = (currentPage - 1) * carsPerPage;
-            int endIndex = Math.min(startIndex + carsPerPage, totalCars);
-
+            LinkedList cars = (LinkedList) request.getAttribute("cars");
             if (cars != null) {
-                for (int i = startIndex; i < endIndex; i++) {
-                    Car car = cars.get(i);
+                Node current = cars.getHead();
+                int count = 0;
+                while (current != null) {
+                    Car car = Car.fromString(current.getData());
+                    if (car != null) {
+                        count++;
         %>
         <div class="col">
             <a href="car-details?id=<%= car.getId() %>" style="text-decoration:none; color:inherit;">
@@ -167,39 +151,22 @@
                 </div>
             </a>
         </div>
-        <%      }
-        }
+        <%
+                }
+                current = current.getNext();
+            }
+            if (count == 0) {
+        %>
+        <div class="col-12">
+            <div class="alert alert-warning text-center" style="border-radius: 1rem; padding: 2rem;">
+                <i class="bi bi-exclamation-circle me-2"></i>No cars available.
+            </div>
+        </div>
+        <%
+                }
+            }
         %>
     </div>
-
-    <!-- Pagination Controls -->
-    <% if (totalPages > 1) { %>
-    <nav aria-label="Car listings pagination">
-        <ul class="pagination">
-            <% if (currentPage > 1) { %>
-            <li class="page-item">
-                <a class="page-link" href="?page=<%= currentPage - 1 %>" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                </a>
-            </li>
-            <% } %>
-
-            <% for (int i = 1; i <= totalPages; i++) { %>
-            <li class="page-item <%= i == currentPage ? "active" : "" %>">
-                <a class="page-link" href="?page=<%= i %>"><%= i %></a>
-            </li>
-            <% } %>
-
-            <% if (currentPage < totalPages) { %>
-            <li class="page-item">
-                <a class="page-link" href="?page=<%= currentPage + 1 %>" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                </a>
-            </li>
-            <% } %>
-        </ul>
-    </nav>
-    <% } %>
 </div>
 </body>
 </html>

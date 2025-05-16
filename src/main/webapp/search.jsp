@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.model.Car" %>
-<%@ page import="java.util.LinkedList" %>
+<%@ page import="com.util.LinkedList" %>
+<%@ page import="com.util.Node" %>
 <html>
 <head>
     <title>Search Cars</title>
@@ -140,9 +141,14 @@
 
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <%
-            LinkedList<Car> results = (LinkedList<Car>) request.getAttribute("results");
-            if (results != null && !results.isEmpty()) {
-                for (Car car : results) {
+            LinkedList results = (LinkedList) request.getAttribute("results");
+            if (results != null) {
+                Node current = results.getHead();
+                boolean hasResults = false;
+                while (current != null) {
+                    Car car = Car.fromString(current.getData());
+                    if (car != null) {
+                        hasResults = true;
         %>
         <div class="col">
             <a href="car-details?id=<%= car.getId() %>" style="text-decoration:none; color:inherit;">
@@ -156,14 +162,21 @@
                 </div>
             </a>
         </div>
-        <%      }
-        } else { %>
+        <%
+                }
+                current = current.getNext();
+            }
+            if (!hasResults) {
+        %>
         <div class="col-12">
             <div class="alert alert-warning text-center" style="border-radius: 1rem; padding: 2rem;">
                 <i class="bi bi-exclamation-circle me-2"></i>No cars found for your search.
             </div>
         </div>
-        <% } %>
+        <%
+                }
+            }
+        %>
     </div>
 </div>
 </body>

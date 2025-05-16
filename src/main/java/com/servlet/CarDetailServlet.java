@@ -2,11 +2,12 @@ package com.servlet;
 
 import com.model.Car;
 import com.util.CarFileHandler;
+import com.util.LinkedList;
+import com.util.Node;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.IOException;
-import java.util.LinkedList;
 
 public class CarDetailServlet extends HttpServlet {
     @Override
@@ -14,13 +15,16 @@ public class CarDetailServlet extends HttpServlet {
         String idParam = request.getParameter("id");
         if (idParam != null) {
             int id = Integer.parseInt(idParam);
-            LinkedList<Car> cars = CarFileHandler.readCars();
+            LinkedList cars = CarFileHandler.readCars();
             Car found = null;
-            for (Car car : cars) {
-                if (car.getId() == id) {
+            Node current = cars.getHead();
+            while (current != null) {
+                Car car = Car.fromString(current.getData());
+                if (car != null && car.getId() == id) {
                     found = car;
                     break;
                 }
+                current = current.getNext();
             }
             request.setAttribute("car", found);
         }
