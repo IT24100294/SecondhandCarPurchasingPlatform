@@ -19,10 +19,21 @@ public class PurchaseRequestServlet extends HttpServlet {
                 return;
             }
 
-            String carType = request.getParameter("car");
-            if (carType == null || carType.isEmpty()) {
+            final String fullCarInfo = request.getParameter("car");
+            if (fullCarInfo == null || fullCarInfo.isEmpty()) {
                 response.sendRedirect("carListings.jsp?error=invalidCar");
                 return;
+            }
+
+            // Extract car price from the carType string (format: "Car X - $YYYY")
+            String carPrice = "";
+            final String carType;
+            if (fullCarInfo.contains(" - $")) {
+                String[] parts = fullCarInfo.split(" - \\$");
+                carType = parts[0];
+                carPrice = parts[1];
+            } else {
+                carType = fullCarInfo;
             }
 
             // Create a new purchase request
@@ -32,6 +43,7 @@ public class PurchaseRequestServlet extends HttpServlet {
                     buyer.getPhone(),
                     buyer.getEmail(),
                     carType,
+                    carPrice,
                     new Date()
             );
 
@@ -39,20 +51,18 @@ public class PurchaseRequestServlet extends HttpServlet {
             PurchaseDataStore.addPurchase(purchase);
 
             // Save to session history with duplicate check
-            List<String> history = (List<String>) session.getAttribute("purchaseHistory");
+            List<Purchase> history = (List<Purchase>) session.getAttribute("purchaseHistory");
             if (history == null) {
                 history = new ArrayList<>();
             }
 
-            // ✅ Check if this car has already been requested
-            // Extract car name (e.g., "Car 1") from full carType string
-            String carName = carType.split(" - ")[0]; // "Car 1"
+            // Check if this car has already been requested
+            boolean alreadyRequested = history.stream()
+                    .anyMatch(p -> p.getCarType().equals(carType));
 
-            boolean alreadyRequested = history.stream().anyMatch(s -> s.contains(carName + " - $"));
             if (!alreadyRequested) {
-                history.add("Requested: " + carType + " on " + purchase.getPurchaseDate());
+                history.add(purchase);
             }
-
 
             session.setAttribute("purchaseHistory", history);
 
