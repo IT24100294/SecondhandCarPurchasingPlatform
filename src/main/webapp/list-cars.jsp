@@ -6,7 +6,7 @@
 <head>
     <title>Car Listings</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="CSS /style.css">
+    <link rel="stylesheet" href="CSS/style.css">
     <style>
         .search-container {
             backdrop-filter: blur(10px);
@@ -146,7 +146,7 @@
                     <div class="card-body">
                         <div class="car-title mb-2"><%= car.getBrand() %> <%= car.getModel() %></div>
                         <span class="badge badge-year"><%= car.getYear() %></span>
-                        <span class="badge badge-price">$<%= car.getPrice() %></span>
+                        <span class="badge badge-price">Rs<%= car.getPrice() %></span>
                     </div>
                 </div>
             </a>

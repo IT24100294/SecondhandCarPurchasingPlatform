@@ -35,7 +35,7 @@ public class Car {
         this.year = year; }
     public double getPrice() {
         return price; }
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price; }
     public String getImageUrl() {
         return imageUrl; }
