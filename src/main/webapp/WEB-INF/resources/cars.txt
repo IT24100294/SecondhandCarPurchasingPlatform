@@ -1,5 +1,5 @@
-1|Toyota|Aqua|2020|15000|toyota-aqua.jpg
-2|Honda|Fit|2018|12000|honda-fit.jpg
+1|Toyota|Aqua|2020|250000|toyota-aqua.jpg
+2|Honda|Fit|2018|14000|honda-fit.jpg
 3|Nissan|Note|2019|13000|nissan-note.jpg
 4|Mazda|Demio|2017|11000|mazda-demio.jpg
 5|Suzuki|Swift|2021|14000|suzuki-swift.jpg
