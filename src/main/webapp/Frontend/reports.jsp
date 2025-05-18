@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Reports</title>
-    <link rel="stylesheet" href="/PG197/css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <nav>
     <h2>Admin Panel</h2>
     <ul>
-        <li><a href="/PG197/Frontend/dashboard.jsp">Dashboard</a></li>
-        <li><a href="/PG197/Frontend/users.jsp">User Management</a></li>
-        <li><a href="/PG197/Frontend/reports.jsp" class="active">Reports</a></li>
+        <li><a href="dashboard.jsp">Dashboard</a></li>
+        <li><a href="users.jsp">User Management</a></li>
+        <li><a href="reports.jsp" class="active">Reports</a></li>
     </ul>
 </nav>
 <div class="main">

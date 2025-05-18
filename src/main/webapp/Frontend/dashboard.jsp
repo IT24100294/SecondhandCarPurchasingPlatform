@@ -7,15 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="/PG197/css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <nav>
     <h2>Admin Panel</h2>
     <ul>
-        <li><a href="/PG197/Frontend/dashboard.jsp" class="active">Dashboard</a></li>
-        <li><a href="/PG197/Frontend/users.jsp">User Management</a></li>
-        <li><a href="/PG197/Frontend/reports.jsp">Reports</a></li>
+        <li><a href="dashboard" class="active">Dashboard</a></li>
+        <li><a href="users">User Management</a></li>
+        <li><a href="reports">Reports</a></li>
     </ul>
 </nav>
 

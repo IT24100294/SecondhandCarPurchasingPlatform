@@ -12,48 +12,14 @@
         <welcome-file>Frontend/dashboard.jsp</welcome-file>
     </welcome-file-list>
 
-    <!-- JSP Configuration -->
-    <jsp-config>
-        <jsp-property-group>
-            <url-pattern>*.jsp</url-pattern>
-            <scripting-invalid>false</scripting-invalid>
-            <page-encoding>UTF-8</page-encoding>
-            <trim-directive-whitespaces>true</trim-directive-whitespaces>
-        </jsp-property-group>
-    </jsp-config>
-
     <!-- Session Configuration -->
     <session-config>
         <session-timeout>30</session-timeout>
     </session-config>
 
-    <!-- User Servlet -->
-    <servlet>
-        <servlet-name>UserServlet</servlet-name>
-        <servlet-class>UserServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>UserServlet</servlet-name>
-        <url-pattern>/Backend/UserServlet</url-pattern>
-    </servlet-mapping>
-
-    <!-- Listing Servlet -->
-    <servlet>
-        <servlet-name>ListingServlet</servlet-name>
-        <servlet-class>ListingServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ListingServlet</servlet-name>
-        <url-pattern>/admin/ListingServlet</url-pattern>
-    </servlet-mapping>
-
-    <!-- Admin Dashboard Servlet -->
-    <servlet>
-        <servlet-name>AdminDashboardServlet</servlet-name>
-        <servlet-class>AdminDashboardServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>AdminDashboardServlet</servlet-name>
-        <url-pattern>/admin/dashboard</url-pattern>
-    </servlet-mapping>
+    <!-- Error Page -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/Frontend/error.jsp</location>
+    </error-page>
 </web-app>
