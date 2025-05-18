@@ -1,0 +1,20 @@
+1|Toyota|Aqua|2020|250000|toyota-aqua.jpg
+2|Honda|Fit|2018|14000|honda-fit.jpg
+3|Nissan|Note|2019|13000|nissan-note.jpg
+4|Mazda|Demio|2017|11000|mazda-demio.jpg
+5|Suzuki|Swift|2021|14000|suzuki-swift.jpg
+6|Toyota|Raize|2025|15000|toyota-raize.jpg
+7|Toyota|Prius|2015|12000|toyota-prius.png
+8|Honda|Vezel|2024|13000|honda-vezel.jpg
+9|Honda|Grace|2016|11000|honda-grace.jpg
+10|Suzuki|Wagon R|2021|14000|suzuki-wagon r.png
+11|Honda|Vitz|2020|15000|honda-vitz.jpeg
+12|Toyota|Allion|2020|12000|toyota-allion.jpeg
+13|Toyota|Axio|2016|13000|toyota-axio.jpeg
+14|Mazda|Demio|2017|11000|mazda-demio.jpg
+15|Suzuki|Swift|2021|14000|suzuki-swift.jpg
+16|Toyota|Aqua|2020|15000|toyota-aqua.jpg
+17|Honda|Fit|2018|12000|honda-fit.jpg
+18|Nissan|Note|2019|13000|nissan-note.jpg
+19|Mazda|Demio|2017|11000|mazda-demio.jpg
+20|Suzuki|Swift|2021|14000|suzuki-swift.jpg

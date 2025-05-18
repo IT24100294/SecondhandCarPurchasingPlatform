@@ -1,21 +1,48 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.example</groupId>
-  <artifactId>SecondhandCarPurchasingPlatform</artifactId>
-  <packaging>war</packaging>
+
+  <groupId>com</groupId>
+  <artifactId>Second_Hand_Car_Sales_System</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>SecondhandCarPurchasingPlatform Maven Webapp</name>
-  <url>http://maven.apache.org</url>
+  <name>Second-Hand Car Sales System</name>
+  <packaging>war</packaging>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.target>22</maven.compiler.target>
+    <maven.compiler.source>22</maven.compiler.source>
+    <junit.version>5.11.0</junit.version>
+  </properties>
+
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
-  </dependencies>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>4.0.1</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet.jsp</groupId>
+      <artifactId>javax.servlet.jsp-api</artifactId>
+      <version>2.3.3</version>
+      <scope>provided</scope>
+    </dependency>  </dependencies>
+
   <build>
-    <finalName>SecondhandCarPurchasingPlatform</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.4.0</version>
+      </plugin>    </plugins>
   </build>
 </project>
