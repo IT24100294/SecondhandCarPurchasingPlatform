@@ -11,6 +11,7 @@ public class Car {
 
     public Car() {}
 
+
     public Car(int id, String make, String model, int year, double price, String description, String[] images) {
         this.id = id;
         this.make = make;
