@@ -1,4 +1,4 @@
-package com.carservice.filter;
+package com.carservice.filter.model;
 
 import java.io.IOException;
 import javax.servlet.Filter;
