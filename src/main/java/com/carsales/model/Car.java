@@ -12,15 +12,6 @@ public class Car {
     public Car() {}
 
 
-    public Car(int id, String make, String model, int year, double price, String description, String[] images) {
-        this.id = id;
-        this.make = make;
-        this.model = model;
-        this.year = year;
-        this.price = price;
-        this.description = description;
-        this.images = images;
-    }
 
     public int getId() {
         return id;
