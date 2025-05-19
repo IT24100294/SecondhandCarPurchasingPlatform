@@ -107,6 +107,19 @@
             float: right;
             font-size: 1.3rem;
         }
+        .pagination {
+            margin-top: 2rem;
+            justify-content: center;
+        }
+        .pagination .page-link {
+            color: #0d6efd;
+            border-radius: 0.5rem;
+            margin: 0 0.2rem;
+        }
+        .pagination .page-item.active .page-link {
+            background-color: #0d6efd17;
+            border-color: #0d6efd;
+        }
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 </head>
@@ -146,7 +159,7 @@
                     <div class="card-body">
                         <div class="car-title mb-2"><%= car.getBrand() %> <%= car.getModel() %></div>
                         <span class="badge badge-year"><%= car.getYear() %></span>
-                        <span class="badge badge-price">Rs<%= car.getPrice() %></span>
+                        <span class="badge badge-price">$<%= car.getPrice() %></span>
                     </div>
                 </div>
             </a>
@@ -167,6 +180,42 @@
             }
         %>
     </div>
+
+    <!-- Pagination Controls -->
+    <%
+        Integer totalPages = (Integer) request.getAttribute("totalPages");
+        Integer currentPage = (Integer) request.getAttribute("currentPage");
+
+        if (totalPages != null && totalPages > 1) {
+    %>
+    <nav aria-label="Car listings pagination">
+        <ul class="pagination">
+            <% if (currentPage != null && currentPage > 1) { %>
+            <li class="page-item">
+                <a class="page-link" href="?page=<%= currentPage - 1 %>" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <% } %>
+
+            <% if (totalPages != null) {
+                for (int i = 1; i <= totalPages; i++) { %>
+            <li class="page-item <%= (currentPage != null && i == currentPage) ? "active" : "" %>">
+                <a class="page-link" href="?page=<%= i %>"><%= i %></a>
+            </li>
+            <%   }
+            } %>
+
+            <% if (currentPage != null && currentPage < totalPages) { %>
+            <li class="page-item">
+                <a class="page-link" href="?page=<%= currentPage + 1 %>" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+            <% } %>
+        </ul>
+    </nav>
+    <% } %>
 </div>
 </body>
 </html>
