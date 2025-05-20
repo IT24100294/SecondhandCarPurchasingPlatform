@@ -1,35 +1,44 @@
-=== Buyer Entry #19 ===
-Timestamp: 2025-05-20 05:16:43
-Name: Virul Akbo Desilva
+=== Buyer Entry ===
+Timestamp: 2025-05-20 11:50:55
+Name: Virul
 Email: waviruldesilva@gmail.com
-Phone: 0705946841
+Phone: 0705670888
 =================
 
 === Buyer Entry #1 ===
-Timestamp: 2025-05-20 05:38:52
-Name: Virul Akbo Desilva
-Email: waviruldesilva@gmail.com
-Phone: 0705946841
+Timestamp: 2025-05-20 11:53:08
+Name:  Desilva
+Email: desilva@gmail.com
+Phone: 123456780000
 =================
 
-=== Buyer Entry #2 ===
-Timestamp: 2025-05-20 05:42:27
-Name: Virul Akbo Desilva
-Email: waviruldesilva@gmail.com
-Phone: 0705946841
+
+=== Buyer Entry #  ===
+Timestamp: 2025-05-20 11:56:02
+Name: akbo virul
+Email: akbo@gmail.com
+Phone: 123456789
 =================
 
-=== Buyer Entry #3 ===
-Timestamp: 2025-05-20 06:46:35
-Name: Virul Akbo Desilva
-Email: waviruldesilva@gmail.com
-Phone: 0705946841
+=== Buyer Entry  ===
+Timestamp: 2025-05-20 11:57:26
+Name: we
+Email: we@gmail.com
+Phone: we12345
 =================
 
-=== Buyer Entry #4 ===
-Timestamp: 2025-05-20 07:13:01
-Name: Cindy
-Email: cindy@gmail.com
-Phone: 0705946841
+=== Buyer Entry #  ===
+Timestamp: 2025-05-20 11:57:47
+Name: wa desilva
+Email: we@gmail.com
+Phone: we12345
+=================
+
+
+=== Buyer Entry #  ===
+Timestamp: 2025-05-20 11:58:59
+Name: Virul Akbo Desilva
+Email: ilva@gmail.com
+Phone: 070568
 =================
 

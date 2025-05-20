@@ -12,7 +12,7 @@
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Buy&Sell</a>
+        <a class="navbar-brand" href="#">Car Purchasing</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -39,7 +39,7 @@
 </nav>
 
 <div class="card">
-    <img src="./assets/car-selling.jpg" class="card-img-top" alt="...">
+    <img src="./assets/heroImg.jpg" class="card-img-top" alt="...">
     <div class="card-body">
         <h5 class="card-title">Used Cars</h5>
         <p class="card-text">Rent or buy a pre-owned car at your convenience!</p>

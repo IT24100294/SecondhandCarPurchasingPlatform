@@ -31,6 +31,16 @@
     <url-pattern>/PurchaseRequestServlet</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>UpdateBuyerInfoServlet</servlet-name>
+    <servlet-class>Backend.Buyer.UpdateBuyerInfoServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>UpdateBuyerInfoServlet</servlet-name>
+    <url-pattern>/UpdateBuyerInfoServlet</url-pattern>
+  </servlet-mapping>
+
 
 
 </web-app>
